@@ -10,6 +10,7 @@
             <th>توضیحات</th>
             <th>قیمت</th>
             <th>فعال</th>
+            <th>ویرایش</th>
         </tr>
 
         {% for p in products %}
@@ -18,6 +19,7 @@
                 <td>{{ p.description }}</td>
                 <td>{{ p.price }}</td>
                 <td>{{ "yes" if p.active == 1 else "no" }}</td>
+            <td><a href="/admin/dashboard/edit-product/{{ p.id }}">ویرایش</a></td>
             </tr>
         {% endfor %}
     </table>
