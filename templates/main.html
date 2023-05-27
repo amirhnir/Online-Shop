@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block haeder %}
+    <title>فروشگاه اینترنتی امیرحسین</title>
+{% endblock %}
+{% block body %}
+
+    {% for p in products %}
+        {{ p.name }}
+    {% endfor %}
+
+{% endblock %}
