@@ -19,12 +19,13 @@
                 <td>{{ p.description }}</td>
                 <td>{{ p.price }}</td>
                 <td>{{ "yes" if p.active == 1 else "no" }}</td>
-            <td><a href="/admin/dashboard/edit-product/{{ p.id }}">ویرایش</a></td>
+                <td><a href="/admin/dashboard/edit-product/{{ p.id }}">ویرایش</a></td>
             </tr>
         {% endfor %}
     </table>
 
     <form action="#" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
         <input type="text" name="name" placeholder="نام محصول"><br>
         <textarea name="description" placeholder="توضیحات"></textarea><br>
         <input type="number" name="price" placeholder="قیمت محصول"><br>
