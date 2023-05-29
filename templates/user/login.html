@@ -4,7 +4,7 @@
 {% endblock %}
 {% block body %}
 
-    <h1>user login</h1>
+    <h1>register</h1>
     <form action="#" method="post">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
         <input type="hidden" name="register" value="1">
@@ -14,5 +14,17 @@
         <input type="text" name="address" placeholder="address"><br>
         <input type="submit">
     </form>
+
+    <h1>login</h1>
+    <form action="#" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="password" name="password" placeholder="password">
+        <input type="submit">
+    </form>
+
+    {% for m in get_flashed_messages() %}
+        {{ m }}
+    {% endfor %}
 
 {% endblock %}
