@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block haeder %}
+    <title>سبدخرید کاربر</title>
+{% endblock %}
+{% block body %}
+
+    {% for card_item in (current_user.carts|selectattr('status','equalto','pending')|list|first).cart_items  %}
+    {{ card_item.product.name }} , {{ card_item.quantity }}
+    {% endfor %}
+
+{% endblock %}
