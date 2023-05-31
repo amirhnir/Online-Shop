@@ -4,15 +4,20 @@
 {% endblock %}
 {% block body %}
 
-    {% set cart = current_user.carts|selectattr('status','equalto','pending')|list %}
-    {% if cart|length > 0 %}
-        {% for cart_item in (cart|first).cart_items %}
+    {% if cart != None and cart.cart_items|list|length > 0 %}
+
+        {% for cart_item in cart.cart_items %}
             {{ cart_item.product.name }} , {{ cart_item.quantity }} , {{ cart_item.product.price }}
             <form action="/remove-from-cart" method="get">
                 <input type="hidden" name="id" value="{{ cart_item.id }}">
-            <input type="submit" value="حذف">
+                <input type="submit" value="حذف">
             </form>
         {% endfor %}
-    {% endif %}
 
+
+        <b>قیمت کل: {{ cart.total_price() }} تومان</b>
+
+    {% else %}
+        سبد خرید خالی است
+    {% endif %}
 {% endblock %}

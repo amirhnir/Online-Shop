@@ -10,3 +10,10 @@ class Cart(db.Model):
     status = Column(String, default='pending')
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     user = db.relationship("User", backref=backref('carts', lazy='dynamic'))
+
+    def total_price(self):
+        total = 0
+        for item in self.cart_items:
+            t = item.price * item.quantity
+            total += t
+        return total
