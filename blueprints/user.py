@@ -29,7 +29,7 @@ def login():
             db.session.commit()
             login_user(user)
             
-            return redirect('/user/dashboard')
+            return redirect(url_for('user.dashboard'))
 
         else:
             user = User.query.filter(User.username == username).first()
@@ -39,9 +39,14 @@ def login():
 
             if sha256_crypt.verify(password, user.password):
                 login_user(user)
-                return redirect('/user/dashboard')
+                return redirect(url_for('user.dashboard'))
             else:
                 flash('نام کابربر یا رمز اشتباه است')
                 return redirect(url_for('user.login'))
 
         return 'done'
+
+
+@app.route('/user/dashboard', methods=['GET'])
+def dashboard():
+    return "this is dashboard"
