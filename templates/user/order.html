@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block haeder %}
+    <title>ُسفارش شماره {{ cart.id }}</title>
+{% endblock %}
+{% block body %}
+
+
+    {{ cart.status }}<br>
+    {% for item in cart.cart_items %}
+        {{ item.product.name }} - {{ item.price }}<br>
+    {% endfor %}
+
+
+{% endblock %}

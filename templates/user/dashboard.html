@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block haeder %}
+    <title>پنل کاربری</title>
+{% endblock %}
+{% block body %}
+
+    {% for cart in current_user.carts|selectattr('status','!=','pending') %}
+      <a href="{{ url_for('user.order', id=cart.id) }}">{{ cart.id }} - {{ cart.status }}</a><br>
+    {% endfor %}
+
+
+{% endblock %}

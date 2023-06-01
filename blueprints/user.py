@@ -8,7 +8,7 @@ from models.cart_item import CartItem
 from models.product import Product
 from models.user import User
 import requests
-import  config
+import config
 
 app = Blueprint("user", __name__)
 
@@ -108,9 +108,9 @@ def payment():
 
     r = requests.post(config.PAYMENT_FIRST_REQUEST_URL,
                       data={
-                          'api':config.PAYMENT_MERCHANT,
+                          'api': config.PAYMENT_MERCHANT,
                           'amount': cart.total_price(),
-                          'callback':config.PAYMENT_CALLBACK
+                          'callback': config.PAYMENT_CALLBACK
                       })
     token = r.json()['result']['token']
     url = r.json()['result']['url']
@@ -141,7 +141,7 @@ def verify():
         refid = r.json()['result']['refid']
         card_pan = r.json()['result']['card_pan']
 
-        pay.card_pan= card_pan
+        pay.card_pan = card_pan
         pay.transaction_id = transaction_id
         pay.refid = refid
         pay.status = 'success'
@@ -159,4 +159,11 @@ def verify():
 @app.route('/user/dashboard', methods=['GET'])
 @login_required
 def dashboard():
-    return "this is dashboard"
+    return render_template('user/dashboard.html')
+
+
+@app.route('/user/dashboard/order/<id>', methods=['GET'])
+@login_required
+def order(id):
+    cart = current_user.carts.filter(Cart.id == id).first_or_404()
+    return render_template('user/order.html', cart=cart)
