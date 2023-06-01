@@ -5,7 +5,7 @@
 {% block body %}
 
 
-    {{ cart.status }}<br>
+    {{ cart.get_status_persian() }}<br>
     {% for item in cart.cart_items %}
         {{ item.product.name }} - {{ item.price }}<br>
     {% endfor %}

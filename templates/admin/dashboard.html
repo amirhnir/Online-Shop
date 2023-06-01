@@ -3,6 +3,12 @@
     <title>admin dashboard</title>
 {% endblock %}
 {% block body %}
-<a href="/admin/dashboard/products">صفحه محصولات</a>
+    <a href="/admin/dashboard/products">صفحه محصولات</a>
+
+    <div>
+        {% for cart in carts %}
+            {{ cart.user.phone }}{{ cart.get_status_persian() }} <a href="{{ url_for('admin.order', id=cart.id ) }}">اطلاعات بیشتر</a><br>
+        {% endfor %}
+    </div>
 
 {% endblock %}
