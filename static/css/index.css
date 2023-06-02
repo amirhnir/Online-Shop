@@ -158,8 +158,6 @@ header a:hover {
 .price {
     font-size: 16px;
     font-weight: 500;
-   float: left;
-    padding-left: 10px;
 }
 
 .product-box section > img {
@@ -191,6 +189,24 @@ header a:hover {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.add-to-cart-btn2 {
+    text-decoration: none;
+    padding: 5px;
+    color: #fafafa;
+    font-size: 16px;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background: rgb(13, 161, 0);
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+}
+
+.add-to-cart-btn2:hover {
+    background: rgb(9, 108, 0);
+}
+
+
 .product-box {
     position: relative;
 }
@@ -206,7 +222,7 @@ header a:hover {
 }
 
 a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
 
@@ -228,6 +244,11 @@ a > img {
     width: 20px;
     margin-left: 5px;
 }
+.tag.big {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 5px;
+}
 
 .tag.red {
     border: 1px solid #ff000061;
@@ -237,4 +258,66 @@ a > img {
 .tag.blue {
     border: 1px solid rgba(0, 94, 255, 0.38);
     background: rgba(0, 136, 255, 0.05);
+}
+
+.tag.yellow {
+    border: 1px solid rgba(255, 191, 0, 0.38);
+    background: rgba(255, 221, 0, 0.05);
+}
+
+.tag.green {
+    border: 1px solid rgba(17, 255, 0, 0.38);
+    background: rgba(55, 255, 0, 0.05);
+}
+
+.product-detail-box {
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    margin: 50px auto auto;
+}
+
+.product-detail-box img {
+    max-width: 280px;
+}
+
+.product-detail-box > section {
+    max-width: 500px;
+}
+
+.product-detail-box h1 {
+    margin: 5px;
+}
+
+.product-detail-box h6 {
+    font-size: 13px;
+    margin: 5px;
+}
+.product-detail-box .price {
+    display: block;
+    background: rgba(0, 0, 0, 0.63);
+    font-size: 20px;
+    font-weight: 500;
+    color: #fafafa;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+.product-detail-box .price-box {
+    margin: 20px;
+    text-align: center;
+}
+
+.product-description-box {
+    max-width: 1100px;
+    margin: auto;
+}
+.product-description-box p {
+    text-align: justify;
+}
+
+.similar-products-box {
+    max-width: 1100px;
+    margin: auto;
 }

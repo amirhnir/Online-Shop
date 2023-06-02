@@ -4,14 +4,50 @@
 {% endblock %}
 {% block body %}
 
-    <img style="width: 300px" src="/static/cover/{{ product.id }}.jpg">
-    {{ product.id }}<br>
-    {{ product.name }}<br>
-    {{ product.price }}<br>
+    {% include 'part/header.html' %}
 
-    <form method="get" action="/add-to-cart">
-        <input type="hidden" name="id" value="{{ product.id }}">
-        <input type="submit" value="اضافه کردن به سبد خرید">
-    </form>
 
+    <div class="product-detail-box">
+        <div>
+            <img src="{{ url_for('static', filename='cover/'+ product.id|string +'.jpg') }}">
+        </div>
+        <section>
+            <h1>{{ product.name }}</h1>
+            <h6>شماره محصول: {{ product.id }}</h6>
+
+            <span class="tag red big" style="margin-right: 5px;"><img
+                    src="{{ url_for('static',filename="theme-image/delivery.png") }}">ارسال رایگان </span>
+            <span class="tag blue big"><img
+                    src="{{ url_for('static',filename="theme-image/done.png") }}">ضمانت اصالت </span>
+            <span class="tag yellow big" style="margin-right: 5px;"><img
+                    src="{{ url_for('static',filename="theme-image/wallet.png") }}">پرداخت درب محل</span>
+            <span class="tag green big"><img
+                    src="{{ url_for('static',filename="theme-image/card.png") }}">پرداخت امن با تمام کارت ها</span>
+
+
+            <div class="price-box">
+                <div class="price">{{ product.price }}</div>
+                <a class="add-to-cart-btn2" href="/add-to-cart?id={{ product.id }}"> افزودن به سبد خرید <img
+                        src="{{ url_for('static',filename="theme-image/cart.png") }}"></a>
+            </div>
+        </section>
+    </div>
+
+
+
+    <article class="product-description-box">
+        <h2>مشخصات</h2>
+        <p>
+            {{ product.description }}
+        </p>
+    </article>
+
+<section class="similar-products-box">
+    <h2>محصولات مشابه</h2>
+    <section class="products">
+        {% for p in another_products %}
+            {% include 'part/product.html' %}
+        {% endfor %}
+    </section>
+</section>
 {% endblock %}
