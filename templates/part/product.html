@@ -1,0 +1,15 @@
+<section class="product-box">
+    <img src="{{ url_for('static', filename='cover/'+p.id|string+'.jpg') }}">
+    <span class="tag red" style="margin-right: 5px;"><img
+            src="{{ url_for('static',filename="theme-image/delivery.png") }}">ارسال رایگان </span>
+    <span class="tag blue"><img src="{{ url_for('static',filename="theme-image/done.png") }}">ضمانت اصالت </span>
+
+
+    <h3>{{ p.name }}</h3>
+    <p>{{ p.description|truncate(50) }}
+        <br>
+        <a href="{{ url_for('general.product', id=p.id, name=p.name) }}">توضیحات بیشتر</a>
+    </p>
+
+    <a href="/add-to-cart?id={{ p.id }}"> افزودن به <img src="{{ url_for('static',filename="theme-image/cart.png") }}"></a>
+</section>
