@@ -146,44 +146,52 @@ header a:hover {
     margin-top: 20px;
 }
 
-.product-box {
+.product-box section {
     max-width: 250px;
     margin: 15px;
-    padding-bottom: 52px;
+    height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    position: relative;
 }
 
-.product-box > img {
+.product-box section > img {
     width: 100%;
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
 }
 
-.product-box > h3 {
+.product-box section > h3 {
     margin: 5px;
 }
 
-.product-box > a {
+.add-to-cart-btn {
     text-decoration: none;
     padding: 5px;
-    color: var(--font-color);
+    color: #fafafa;
     font-size: 12px;
     border: 2px solid rgba(14, 255, 0, 0.6);
     border-radius: 9px;
-    background: rgba(24, 255, 0, 0.2);
+    background: rgba(10, 88, 0, 1);
     position: absolute;
-    left: 10px;
-    bottom: 10px;
+    left: 20px;
+    top: 20px;
     font-weight: 300;
+    opacity: 0;
 }
 
-.product-box > a:hover {
-    background: rgba(24, 255, 0, 0.08);
+.add-to-cart-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.product-box > p {
+.product-box {
+    position: relative;
+}
+
+.product-box:hover .add-to-cart-btn {
+    opacity: 1;
+}
+
+.product-box section > p {
     font-size: 12px;
     margin: 0 10px;
     font-weight: 300;
