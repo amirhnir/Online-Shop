@@ -1,0 +1,167 @@
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../font/Vazirmatn-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../font/Vazirmatn-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../font/Vazirmatn-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../font/Vazirmatn-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../font/Vazirmatn-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../font/Vazirmatn-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../font/Vazirmatn-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../font/Vazirmatn-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../font/Vazirmatn-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-color: #525252;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    background: #fafafa;
+    color: var(--font-color);
+    font-family: Vazirmatn;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+}
+
+header img {
+    height: inherit;
+    float: left;
+}
+
+header > section {
+    width: 100%;
+    max-width: 800px;
+    height: 40px;
+    margin: 30px auto auto;
+    padding: 10px 20px;
+
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+}
+
+header a {
+    font-size: 20px;
+    color: var(--font-color);
+    text-decoration: none;
+    font-weight: 900;
+    margin: 0 10px;
+    padding: 5px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.product-box {
+    max-width: 250px;
+    margin: 15px;
+    padding-bottom: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.product-box > img {
+    width: 100%;
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+}
+
+.product-box > h3 {
+    margin: 5px;
+}
+
+.product-box > div > a {
+    text-decoration: none;
+    padding: 5px;
+    color: var(--font-color);
+    font-size: 12px;
+    margin: 10px;
+    margin-bottom: 10px;
+    border: 2px solid rgba(14, 255, 0, 0.6);
+    border-radius: 9px;
+    background: rgba(24, 255, 0, 0.32);
+}
+
+.product-box > p {
+    font-size: 12px;
+    margin: 0;
+}
