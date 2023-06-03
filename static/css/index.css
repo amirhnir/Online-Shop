@@ -377,6 +377,10 @@ a.icon > img {
     padding: 10px;
     overflow: auto;
 }
+p {
+    text-align: justify;
+    padding: 5px 10px;
+}
 
 .simple-box h1 {
     margin: 0 10px;
