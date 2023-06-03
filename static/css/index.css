@@ -84,7 +84,7 @@ body {
     font-size: 16px;
     background: #fafafa;
     color: var(--font-color);
-    font-family: Vazirmatn;
+    font-family: Vazirmatn ;
 }
 
 header {
@@ -153,7 +153,8 @@ header a:hover {
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    padding-bottom: 32px;
+    padding-bottom: 6px;
+    overflow: auto;
     background: #ffffff;
 }
 
@@ -161,6 +162,7 @@ header a:hover {
     font-size: 16px;
     font-weight: 500;
 }
+
 td.price {
     font-weight: normal;
 }
@@ -234,6 +236,14 @@ a.icon {
 a.icon > img {
     width: 20px;
     margin-right: 5px;
+}
+
+.banner {
+    display: block;
+    max-width: 800px;
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 35px;
 }
 
 .tag {
@@ -335,12 +345,13 @@ a.icon > img {
     font-weight: 700;
     border-radius: 5px;
     border: 2px solid #12b300;
-    color:#12b300;
+    color: #12b300;
     padding: 8px;
-    margin: 5px ;
+    margin: 5px;
 }
+
 .cart .pay-btn:hover {
-    background:#12b300;
+    background: #12b300;
     color: #ffffff;
 }
 
@@ -380,7 +391,8 @@ a.icon > img {
     padding: 10px;
     overflow: auto;
 }
-p {
+
+.simple-box p {
     text-align: justify;
     padding: 5px 10px;
 }
@@ -462,6 +474,15 @@ table.cart td {
 
 #login-box, #register-box {
     text-align: center;
+}
+
+.eggy .title{
+    font-weight: 800 !important;
+    font-size: 19px !important;
+}
+.eggy .message{
+    font-weight: 400 !important;
+    font-size: 16px !important;
 }
 
 @media (max-width: 725px) {
