@@ -11,10 +11,19 @@
 {% block body %}{% endblock %}
 
 <script>
-    const prices= document.getElementsByClassName('price')
-    for(let i = 0; i < prices.length; i++){
+    const prices = document.getElementsByClassName('price')
+    for (let i = 0; i < prices.length; i++) {
         let price = prices[i]
         price.innerText = parseInt(price.innerText).toLocaleString() + " تومان"
+    }
+
+    const header_menu = document.getElementById('header-menu');
+    const change_header_menu = (show) => {
+        if (show) {
+            header_menu.style.height = header_menu.scrollHeight + "px"
+        } else {
+            header_menu.style.height = "0"
+        }
     }
 </script>
 </body>
