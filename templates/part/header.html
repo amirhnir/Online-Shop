@@ -1,6 +1,8 @@
 <header>
     <section>
-        <img src="{{ url_for('static',filename = 'image/logo.png') }}" alt="online tech">
+        <a href="/">
+            <img src="{{ url_for('static',filename = 'image/logo.png') }}" alt="online tech">
+        </a>
         <div id="header-menu">
             <span id="header-menu-close-btn" onclick="javascript:change_header_menu(false)">X</span>
 
@@ -8,11 +10,12 @@
                 <input type="search" name="search" value="{{ search if search != None }}" placeholder="جستجو...">
             </form>
 
-            <a href="/">صفحه اصلی</a>
-            <a href="/user/login">ورود/ثبت نام</a>
-            <a href="/about">درباره ما</a>
+            <a class="header-link" href="/cart">سبدخرید</a>
+            <a class="header-link" href="/user/login">ورود/ثبت نام</a>
+            <a class="header-link" href="/about">درباره ما</a>
         </div>
 
-        <img src="{{ url_for('static',filename = 'theme-image/menu.png') }}" id="header-menu-btn" onclick="javascript:change_header_menu(true)">
+        <img src="{{ url_for('static',filename = 'theme-image/menu.png') }}" id="header-menu-btn"
+             onclick="javascript:change_header_menu(true)">
     </section>
 </header>

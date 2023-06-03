@@ -124,7 +124,7 @@ header div input {
     border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-header a {
+header .header-link {
     font-size: 20px;
     color: var(--font-color);
     text-decoration: none;
@@ -200,7 +200,7 @@ header a:hover {
     border-bottom-left-radius: 9px;
     background: rgb(13, 161, 0);
     font-weight: 400;
-    display: flex;
+    display: flex !important;
     justify-content: center;
 }
 
@@ -223,12 +223,12 @@ header a:hover {
     font-weight: 300;
 }
 
-a {
+a.icon {
     display: inline-flex;
     align-items: center;
 }
 
-a > img {
+a.icon > img {
     width: 20px;
     margin-right: 5px;
 }
@@ -272,6 +272,7 @@ a > img {
     border: 1px solid rgba(17, 255, 0, 0.38);
     background: rgba(55, 255, 0, 0.05);
 }
+
 .tag.orange {
     border: 1px solid rgba(255, 119, 0, 0.38);
     background: rgba(255, 60, 0, 0.05);
@@ -290,7 +291,7 @@ a > img {
     padding: 10px;
 }
 
-.product-detail-box .product-image{
+.product-detail-box .product-image {
     max-width: 280px;
     margin-left: 10px;
     width: 100%;
@@ -324,6 +325,17 @@ a > img {
     text-align: center;
 }
 
+.cart .pay-btn {
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 20px;
+    float: left;
+    font-weight: 700;
+    border-radius: 5px;
+    background: #42ff2d;
+    padding: 8px;
+}
+
 .product-description-box {
     max-width: 1100px;
     margin: auto;
@@ -349,6 +361,50 @@ a > img {
     margin: 10px;
     font-size: 20px;
     display: none;
+}
+
+.simple-box {
+    background: #ffffff;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    max-width: 800px;
+    margin: 20px auto auto;
+    padding: 10px;
+    overflow: auto;
+}
+
+.simple-box h1 {
+    margin: 0 10px;
+
+}
+
+.cartitem-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 2px;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.cartitem-decrease {
+    background: rgba(255, 0, 0, 0.25);
+}
+
+.cartitem-increase {
+    background: rgba(0, 255, 0, 0.25);
+}
+
+table.cart {
+    margin: auto;
+}
+
+table.cart td {
+    padding: 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 725px) {
