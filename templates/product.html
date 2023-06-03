@@ -9,7 +9,7 @@
 
     <div class="product-detail-box">
         <div>
-            <img src="{{ url_for('static', filename='cover/'+ product.id|string +'.jpg') }}">
+            <img class="product-image" src="{{ url_for('static', filename='cover/'+ product.id|string +'.jpg') }}">
         </div>
         <section>
             <h1>{{ product.name }}</h1>
@@ -23,6 +23,8 @@
                     src="{{ url_for('static',filename="theme-image/wallet.png") }}">پرداخت درب محل</span>
             <span class="tag green big"><img
                     src="{{ url_for('static',filename="theme-image/card.png") }}">پرداخت امن با تمام کارت ها</span>
+ <span class="tag orange big"><img
+                    src="{{ url_for('static',filename="theme-image/7.png") }}">7 روز ضمانت تعویض</span>
 
 
             <div class="price-box">
