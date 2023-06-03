@@ -327,13 +327,18 @@ a.icon > img {
 
 .cart .pay-btn {
     text-decoration: none;
-    color: var(--font-color);
     font-size: 20px;
     float: left;
     font-weight: 700;
     border-radius: 5px;
-    background: #42ff2d;
+    border: 2px solid #12b300;
+    color:#12b300;
     padding: 8px;
+    margin: 5px ;
+}
+.cart .pay-btn:hover {
+    background:#12b300;
+    color: #ffffff;
 }
 
 .product-description-box {
