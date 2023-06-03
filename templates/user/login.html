@@ -1,30 +1,53 @@
 {% extends 'base.html' %}
 {% block haeder %}
-    <title>ورود/ثبت نام کاربران</title>
+    <title>ورود/ثبت نام</title>
 {% endblock %}
 {% block body %}
 
-    <h1>register</h1>
-    <form action="#" method="post">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <input type="hidden" name="register" value="1">
-        <input type="text" name="username" placeholder="username"><br>
-        <input type="password" name="password" placeholder="password"><br>
-        <input type="number" name="phone" placeholder="phone"><br>
-        <input type="text" name="address" placeholder="address"><br>
-        <input type="submit">
-    </form>
+    {% include 'part/header.html' %}
 
-    <h1>login</h1>
-    <form action="#" method="post">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <input type="text" name="username" placeholder="username"><br>
-        <input type="password" name="password" placeholder="password">
-        <input type="submit">
-    </form>
 
-    {% for m in get_flashed_messages() %}
-        {{ m }}
-    {% endfor %}
+    <section class="simple-box" style="max-width: 290px;">
 
+        <div id="login-box">
+            <h1>ورود</h1>
+            <form action="#" method="post">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <input type="text" name="username" placeholder="نام کاربری">
+                <input type="password" name="password" placeholder="رمز عبور">
+                <input type="submit" value="ورود">
+            </form>
+            <span style="cursor: pointer;" onclick="javascript:show_register()">ثبت نام نکرده اید؟</span>
+
+        </div>
+        <div id="register-box">
+            <h1>ثبت نام</h1>
+            <form action="#" method="post">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <input type="hidden" name="register" value="1">
+                <input type="text" name="username" placeholder="نام کاربری">
+                <input type="password" name="password" placeholder="رمز عبور">
+                <input type="number" name="phone" placeholder="شماره موبایل">
+                <textarea name="address" placeholder="آدرس دقیق پستی"></textarea>
+                <input type="submit" value="ثبت نام">
+            </form>
+            <span  style="cursor: pointer;" onclick="javascript:show_login()">قبلا ثبت نام کرده اید؟</span>
+
+        </div>
+    </section>
+
+    <script>
+        const register_box = document.getElementById('register-box')
+        const login_box = document.getElementById('login-box')
+
+        const show_register = () => {
+            register_box.style.display = "block"
+            login_box.style.display = "none"
+        }
+
+        const show_login = () => {
+            login_box.style.display = "block"
+            register_box.style.display = "none"
+        }
+    </script>
 {% endblock %}

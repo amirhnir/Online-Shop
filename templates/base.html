@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/eggy.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/progressbar.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/theme.css') }}"/>
+
     <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
     {% block haeder %}{% endblock %}
 </head>
@@ -25,6 +29,18 @@
             header_menu.style.height = "0"
         }
     }
+</script>
+
+<script type="module">
+    import {Eggy} from '{{ url_for('static',filename='js/eggy.js') }}';
+    {% for m in get_flashed_messages() %}
+        await Eggy({
+            title: 'اطلاعات',
+            message: '{{ m }}',
+            type: 'info',
+            duration: 5000,
+        });
+    {% endfor %}
 </script>
 </body>
 </html>
