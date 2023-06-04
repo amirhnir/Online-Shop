@@ -72,6 +72,7 @@
 
 :root {
     --font-color: #5f5f5f;
+    --color-accent: rgb(0 134 229)
 }
 
 * {
@@ -191,9 +192,9 @@ td.price {
     padding: 5px;
     color: #fafafa;
     font-size: 12px;
-    border: 2px solid rgba(14, 255, 0, 0.6);
+    border: 2px solid var(--color-accent);
     border-radius: 9px;
-    background: rgba(10, 88, 0, 1);
+    background: rgb(0, 55, 118);
     position: absolute;
     left: 20px;
     top: 20px;
@@ -202,7 +203,12 @@ td.price {
 }
 
 .add-to-cart-btn:hover {
-    background: rgba(0, 0, 0, 0.5);
+    color: rgb(0, 55, 118);
+    background: #ffffff;
+}
+
+.add-to-cart-btn:hover img {
+    filter: brightness(0);
 }
 
 .add-to-cart-btn2 {
@@ -212,14 +218,14 @@ td.price {
     font-size: 16px;
     border-bottom-right-radius: 9px;
     border-bottom-left-radius: 9px;
-    background: rgb(13, 161, 0);
+    background: var(--color-accent);
     font-weight: 400;
     display: flex !important;
     justify-content: center;
 }
 
 .add-to-cart-btn2:hover {
-    background: rgb(9, 108, 0);
+    background: rgb(0, 61, 108);
 }
 
 
@@ -281,8 +287,8 @@ a.icon > img {
 }
 
 .tag.big {
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 16px;
     margin: 5px;
 }
 
@@ -345,7 +351,7 @@ a.icon > img {
 
 .product-detail-box .price {
     display: block;
-    background: rgba(0, 0, 0, 0.63);
+    background: rgb(0 0 0 / 79%);
     font-size: 20px;
     font-weight: 500;
     color: #fafafa;
@@ -399,6 +405,8 @@ a.icon > img {
 
 .product-description-box p {
     text-align: justify;
+    font-weight: 300;
+    margin: 0 15px;
 }
 
 .similar-products-box {
@@ -459,6 +467,13 @@ a.icon > img {
     background: rgba(0, 255, 0, 0.25);
 }
 
+table tr:nth-child(even){
+    background: rgba(0, 0, 0, 0.03);
+}
+table tr:last-child td{
+    border: none;
+}
+
 table.cart {
     margin: auto;
 }
@@ -499,14 +514,14 @@ table.cart td {
     display: block;
     text-align: center;
     background: transparent;
-    border: 2px solid #00b6ff;
+    border: 2px solid var(--color-accent);
     padding: 3px 4px;
-    color: #00b6ff;
+    color: var(--color-accent);
     font-weight: 900;
 }
 
 .simple-box input[type='submit']:hover {
-    background: #00b6ff;
+    background: var(--color-accent);
     color: #ffffff;
 }
 
