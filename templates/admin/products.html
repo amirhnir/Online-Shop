@@ -1,39 +1,51 @@
 {% extends 'base.html' %}
 {% block haeder %}
-    <title>admin products</title>
+    <title>صفحه محصولات</title>
 {% endblock %}
 {% block body %}
 
-    <table>
-        <tr>
-            <th>تصویر</th>
-            <th>اسم</th>
-            <th>توضیحات</th>
-            <th>قیمت</th>
-            <th>فعال</th>
-            <th>ویرایش</th>
-        </tr>
 
-        {% for p in products %}
+    {% include 'part/header.html' %}
+
+    <section class="simple-box">
+<h1>محصولات</h1>
+        <table>
             <tr>
-                <td><img style="width: 20px" src="/static/cover/{{ p.id }}.jpg"></td>
-                <td>{{ p.name }}</td>
-                <td>{{ p.description }}</td>
-                <td>{{ p.price }}</td>
-                <td>{{ "yes" if p.active == 1 else "no" }}</td>
-                <td><a href="/admin/dashboard/edit-product/{{ p.id }}">ویرایش</a></td>
+                <th>تصویر</th>
+                <th>اسم</th>
+                <th>توضیحات</th>
+                <th>قیمت</th>
+                <th>فعال</th>
+                <th>ویرایش</th>
             </tr>
-        {% endfor %}
-    </table>
 
-    <form action="#" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <label>cover:</label><input type="file" name="cover"><br>
-        <input type="text" name="name" placeholder="نام محصول"><br>
-        <textarea name="description" placeholder="توضیحات"></textarea><br>
-        <input type="number" name="price" placeholder="قیمت محصول"><br>
-        <label>فعال:</label><input value="1" type="checkbox" name="active"><br>
-        <input type="submit">
-    </form>
-
+            {% for p in products %}
+                <tr>
+                    <td><img style="width: 70px" src="/static/cover/{{ p.id }}.jpg"></td>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.description|truncate(150) }}</td>
+                    <td>{{ p.price }}</td>
+                    <td><img style="width: 20px;"
+                             src="{{ url_for('static', filename='theme-image/done.png') if p.active == 1 else url_for('static', filename='theme-image/delete.png') }}">
+                    </td>
+                    <td><a href="/admin/dashboard/edit-product/{{ p.id }}">ویرایش</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section class="simple-box">
+        <h1>محصول جدید</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <input type="file" name="cover">
+            <input type="text" name="name" placeholder="نام محصول">
+            <textarea name="description" placeholder="توضیحات"></textarea>
+            <input type="number" name="price" placeholder="قیمت محصول">
+            <div style="display:flex;justify-content: center">
+                <label for="active"> فعال </label>
+                <input style="margin: 5px;" value="1" id="active" type="checkbox" name="active">
+            </div>
+            <input type="submit" value="افزودن">
+        </form>
+    </section>
 {% endblock %}
