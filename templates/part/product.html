@@ -2,14 +2,14 @@
     <a style="all:unset;cursor: pointer;" href="{{ url_for('general.product', id=p.id, name=p.name) }}">
         <section>
             <img src="{{ url_for('static', filename='cover/'+p.id|string+'.jpg') }}">
-            <span class="tag red" style="margin-right: 5px;"><img
+            <span class="tag green" style="margin-right: 5px;"><img
                     src="{{ url_for('static',filename="theme-image/delivery.png") }}">ارسال رایگان </span>
             <span class="tag blue"><img
                     src="{{ url_for('static',filename="theme-image/done.png") }}">ضمانت اصالت </span>
 
 
             <h3>{{ p.name }}</h3>
-            <p>{{ p.description|truncate(100) }}</p>
+            <p>{{ p.description|truncate(250) }}</p>
 
             <span class="price" style="float: left;padding-left: 10px;">{{ p.price }}</span>
         </section>

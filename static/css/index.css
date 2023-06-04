@@ -169,12 +169,21 @@ td.price {
 
 .product-box section > img {
     width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
 }
 
 .product-box section > h3 {
     margin: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    height: 56px;
 }
 
 .add-to-cart-btn {
@@ -230,6 +239,13 @@ td.price {
     font-size: 12px;
     margin: 0 10px;
     font-weight: 300;
+    margin-bottom: 7px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
 }
 
 a.icon {
