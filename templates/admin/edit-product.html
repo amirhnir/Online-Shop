@@ -1,19 +1,28 @@
 {% extends 'base.html' %}
 {% block haeder %}
-    <title>edit products</title>
+    <title>ویرایش محصول {{ product.id }}</title>
 {% endblock %}
 {% block body %}
 
+    {% include 'part/header.html' %}
 
-    <img style="width: 100px" src="/static/cover/{{ product.id }}.jpg">
-    <form action="#" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <label>cover:</label> <input type="file" name="cover"><br>
-        <input type="text" name="name" value="{{ product.name }}" placeholder="نام محصول"><br>
-        <textarea name="description" placeholder="توضیحات">{{ product.description }}</textarea><br>
-        <input type="number" value="{{ product.price }}" name="price" placeholder="قیمت محصول"><br>
-        <label>فعال:</label><input value="1" type="checkbox" name="active" {{ "checked" if product.active == 1 }} ><br>
-        <input type="submit">
-    </form>
+
+    <section class="simple-box big">
+
+        <img style="width: 100px;margin: auto;display: block;" src="{{ url_for('static', filename='cover/'+product.id|string+".jpg") }}">
+        <form action="#" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <input type="file" name="cover">
+            <input type="text" name="name" value="{{ product.name }}" placeholder="نام محصول">
+            <textarea name="description" placeholder="توضیحات">{{ product.description }}</textarea>
+            <input type="number" value="{{ product.price }}" name="price" placeholder="قیمت محصول">
+            <div style="display: flex;justify-content: center">
+                <label> فعال </label><input style="margin: 5px;width: auto;" value="1" type="checkbox"
+                                            name="active" {{ "checked" if product.active == 1 }} >
+            </div>
+            <input type="submit" value="ثبت تغییرات">
+        </form>
+
+    </section>
 
 {% endblock %}

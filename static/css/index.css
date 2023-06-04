@@ -468,6 +468,11 @@ table.cart td {
     padding: 2px 10px;
 }
 
+.simple-box.big input, .simple-box.big textarea, .simple-box.big select {
+    max-width: 400px;
+    width: 100%;
+}
+
 .simple-box input[type='submit'] {
     all: unset;
     border-radius: 10px;
