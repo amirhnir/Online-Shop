@@ -6,17 +6,21 @@
         <div id="header-menu">
             <span id="header-menu-close-btn" onclick="javascript:change_header_menu(false)">X</span>
 
-            <form action="/" method="get">
-                <input type="search" name="search" value="{{ search if search != None }}" placeholder="جستجو...">
-            </form>
-
-            <a class="header-link" href="/cart">سبدخرید</a>
-            {% if current_user.is_authenticated %}
-                <a class="header-link" href="/user/dashboard">پنل کاربری</a>
+            {% if  request.endpoint.startswith("admin") %}
+                <a class="header-link" href="/admin/dashboard">پنل مدیریت</a>
+                <a class="header-link" href="/admin/dashboard/products">صفحه محصولات</a>
             {% else %}
-                <a class="header-link" href="/user/login">ورود/ثبت نام</a>
+                <form action="/" method="get">
+                    <input type="search" name="search" value="{{ search if search != None }}" placeholder="جستجو...">
+                </form>
+                <a class="header-link" href="/cart">سبدخرید</a>
+                {% if current_user.is_authenticated %}
+                    <a class="header-link" href="/user/dashboard">پنل کاربری</a>
+                {% else %}
+                    <a class="header-link" href="/user/login">ورود/ثبت نام</a>
+                {% endif %}
+                <a class="header-link" href="/about">درباره ما</a>
             {% endif %}
-            <a class="header-link" href="/about">درباره ما</a>
         </div>
 
         <img src="{{ url_for('static',filename = 'theme-image/menu.png') }}" id="header-menu-btn"

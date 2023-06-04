@@ -14,3 +14,13 @@ class Payment(db.Model):
     date_created = Column(String(15), default=get_current_time)
     cart_id = Column(Integer, ForeignKey('carts.id'), nullable=False)
     cart = db.relationship("Cart", backref='payments')
+
+    def get_status_persian(self):
+        if self.status == 'pending':
+            return "در انتظار پرداخت"
+
+        if self.status == "success":
+            return "پرداخت شده"
+
+        if self.status == "failed":
+            return "عدم موفق"

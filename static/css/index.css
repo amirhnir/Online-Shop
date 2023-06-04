@@ -218,7 +218,7 @@ td.price {
     position: relative;
 }
 
-.product-box  section:hover {
+.product-box section:hover {
     box-shadow: 1px 1px 10px 1px #00000020;;
 }
 
@@ -456,7 +456,7 @@ table.cart td {
     display: none;
 }
 
-.simple-box input, .simple-box textarea {
+.simple-box input, .simple-box textarea, .simple-box select {
     color: var(--font-color);
     font-size: 16px;
     font-family: Vazirmatn;

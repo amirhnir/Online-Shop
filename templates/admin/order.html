@@ -3,20 +3,71 @@
     <title>admin dashboard | order</title>
 {% endblock %}
 {% block body %}
-    <form action="#" method="post">
-    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-    <select name="status">
-        <option value="pending" {% if cart.status == "pending" %} selected {% endif %}>در انتظار پرداخت (سبدخرید)</option>
-        <option value="paid" {% if cart.status == "paid" %} selected {% endif %}>پرداخت شده</option>
-        <option value="sent" {% if cart.status == "sent" %} selected {% endif %}>ارسال شده</option>
-        <option value="rejected" {% if cart.status == "rejected" %} selected {% endif %}>رد شده</option>
-    </select>
-    <input type="submit" value="تغییر">
-    </form>
-    <div>
-        {% for item in cart.cart_items %}
-            {{ item.product.name }}<br>
+
+    {% include 'part/header.html' %}
+
+    <section class="simple-box cart">
+        <h1>سفارش شماره {{ cart.id }}</h1>
+
+        <form action="#" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <select name="status">
+                <option value="pending" {% if cart.status == "pending" %} selected {% endif %}>در انتظار پرداخت
+                    (سبدخرید)
+                </option>
+                <option value="paid" {% if cart.status == "paid" %} selected {% endif %}>پرداخت شده</option>
+                <option value="sent" {% if cart.status == "sent" %} selected {% endif %}>ارسال شده</option>
+                <option value="rejected" {% if cart.status == "rejected" %} selected {% endif %}>رد شده</option>
+            </select>
+            <input type="submit" value="تغییر">
+        </form>
+
+        <table class="cart"  style="margin-top: 30px">
+            <tr>
+                <th>شماره محصول</th>
+                <th>نام محصول</th>
+                <th>قیمت</th>
+                <th>تعداد</th>
+            </tr>
+            {% for item in cart.cart_items %}
+                <tr>
+                    <td>{{ item.product.id }}</td>
+                    <td>{{ item.product.name }}</td>
+                    <td class="price">{{ item.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <td colspan="3" style="text-align: left" class="price">{{ cart.total_price() }}</td>
+            </tr>
+
+        </table>
+
+    <table class="cart" style="margin-top: 30px">
+        <tr>
+            <th>وضغیت</th>
+            <th>مبلغ</th>
+            <th>شماره پیگیری</th>
+            <th>شماره تراکنش</th>
+            <th>شماره کارت</th>
+        </tr>
+
+        {% for pay in cart.payments %}
+            <tr>
+            <td>{{ pay.get_status_persian() }}</td>
+            <td class="price">{{ pay.price }}</td>
+            <td>{{ pay.refid }}</td>
+            <td>{{ pay.transaction_id }}</td>
+            <td>{{ pay.card_pan }}</td>
+            </tr>
         {% endfor %}
-    </div>
+    </table>
+
+    </section>
+
+
+
+
 
 {% endblock %}
