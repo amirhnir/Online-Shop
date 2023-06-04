@@ -84,7 +84,7 @@ body {
     font-size: 16px;
     background: #fafafa;
     color: var(--font-color);
-    font-family: Vazirmatn ;
+    font-family: Vazirmatn;
 }
 
 header {
@@ -100,13 +100,13 @@ header img {
 header > section {
     width: 100%;
     max-width: 800px;
-    height: 60px;
-    margin: 30px auto auto;
-    padding: 10px 20px;
+    height: 70px;
+    margin: 18px auto auto;
+    padding: 15px 20px;
     box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     background: #ffffff;
+    box-shadow: 1px 1px 10px 1px #00000020;
 }
 
 header div {
@@ -218,6 +218,10 @@ td.price {
     position: relative;
 }
 
+.product-box  section:hover {
+    box-shadow: 1px 1px 10px 1px #00000020;;
+}
+
 .product-box:hover .add-to-cart-btn {
     opacity: 1;
 }
@@ -242,7 +246,7 @@ a.icon > img {
     display: block;
     max-width: 800px;
     width: 100%;
-    margin: 10px auto;
+    margin: 20px auto 0;
     border-radius: 35px;
 }
 
@@ -300,7 +304,7 @@ a.icon > img {
     margin: 50px auto auto;
     background: #ffffff;
     border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     padding: 10px;
 }
 
@@ -384,7 +388,7 @@ a.icon > img {
 
 .simple-box {
     background: #ffffff;
-    border: 2px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 25px;
     max-width: 800px;
     margin: 20px auto auto;
@@ -428,11 +432,7 @@ table.cart {
 
 table.cart td {
     padding: 5px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-}
-
-#login-box {
-
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 #register-box {
@@ -476,11 +476,12 @@ table.cart td {
     text-align: center;
 }
 
-.eggy .title{
+.eggy .title {
     font-weight: 800 !important;
     font-size: 19px !important;
 }
-.eggy .message{
+
+.eggy .message {
     font-weight: 400 !important;
     font-size: 16px !important;
 }
