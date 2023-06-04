@@ -359,6 +359,23 @@ a.icon > img {
     color: #ffffff;
 }
 
+
+.red-btn {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    padding: 6px;
+    margin: 5px;
+}
+
+.red-btn:hover {
+    background: #ff0000;
+    color: #ffffff;
+}
+
 .product-description-box {
     max-width: 1100px;
     margin: auto;

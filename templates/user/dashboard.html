@@ -6,26 +6,46 @@
 
     {% include 'part/header.html' %}
 
-    <section class="simple-box cart">
+    <section class="simple-box cart" style="max-width: 376px">
         <h1>سفارشات</h1>
-        <table class="cart">
-            <tr>
-                <th>شماره سفارش</th>
-                <th>وضعیت</th>
-                <th>مشاهده</th>
-            </tr>
-            {% for cart in current_user.carts|selectattr('status','!=','pending') %}
+        {% if current_user.carts|list|length > 0 %}
+            <table class="cart">
                 <tr>
-                    <td>{{ cart.id }}</td>
-                    <td>{{ cart.get_status_persian() }}</td>
-                    <td><a href="{{ url_for('user.order', id=cart.id) }}">جزئیات</a></td>
+                    <th>شماره سفارش</th>
+                    <th>وضعیت</th>
+                    <th>مشاهده</th>
                 </tr>
+                {% for cart in current_user.carts|selectattr('status','!=','pending') %}
+                    <tr>
+                        <td>{{ cart.id }}</td>
+                        <td>{{ cart.get_status_persian() }}</td>
+                        <td><a href="{{ url_for('user.order', id=cart.id) }}">جزئیات</a></td>
+                    </tr>
 
-            {% endfor %}
-        </table>
+                {% endfor %}
+            </table>
+        {% else %}
+            <i style="display: block;text-align: center;">سفارشی وجود ندارد</i>
+        {% endif %}
 
     </section>
 
+    <section class="simple-box" style="max-width: 376px">
+        <h1>ویرایش اطلاعات</h1>
+
+        <form action="#" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="text" name="username" value="{{ current_user.username }}" placeholder="نام کاربری">
+            <input type="password" name="password" placeholder="رمز عبور جدید">
+            <input type="number" name="phone" value="{{ current_user.phone }}" placeholder="شماره موبایل">
+            <textarea name="address" placeholder="آدرس دقیق پستی">{{ current_user.address }}</textarea>
+            <input type="submit" value="ثبت تغییرات">
+        </form>
+    </section>
+
+    <div style="text-align: center;margin-top: 20px;">
+        <a href="/user/logout" class="red-btn">خروج از حساب کاربری</a>
+    </div>
 
 
 
