@@ -20,10 +20,14 @@
                     <tr>
                         <td>{{ cart_item.product.name }}</td>
                         <td class="price">{{ cart_item.price }}</td>
-                        <td><a class="cartitem-btn cartitem-increase"
+                        <td>
+                            <div style="display: flex;justify-content: center;align-items: center;">
+                            <a class="cartitem-btn"
                                href="/remove-from-cart?id={{ cart_item.id }}">-</a>{{ cart_item.quantity }}<a
-                                class="cartitem-btn cartitem-decrease"
-                                href="/add-to-cart?id={{ cart_item.product.id }}">+</a></td>
+                                class="cartitem-btn"
+                                href="/add-to-cart?id={{ cart_item.product.id }}">+</a>
+                            </div>
+                        </td>
                     </tr>
                 {% endfor %}
 
@@ -33,7 +37,7 @@
             </table>
 
 
-            <a class="pay-btn icon" href="/payment"> پرداخت <img
+            <a class="pay-btn icon" href="/payment"> پرداخت آنلاین <img
                     src="{{ url_for('static',filename="theme-image/wallet.png") }}"></a>
 
 

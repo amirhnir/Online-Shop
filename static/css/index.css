@@ -373,19 +373,23 @@ a.icon > img {
 
 .cart .pay-btn {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     float: left;
-    font-weight: 700;
-    border-radius: 5px;
-    border: 2px solid #12b300;
-    color: #12b300;
-    padding: 8px;
+    font-weight: 600;
+    border-radius: 15px;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);;
+    padding: 7px;
     margin: 5px;
 }
 
 .cart .pay-btn:hover {
-    background: #12b300;
+    background: var(--color-accent);;
     color: #ffffff;
+}
+
+.cart .pay-btn:hover img {
+   filter: brightness(100);
 }
 
 
@@ -464,15 +468,9 @@ a.icon > img {
     text-align: center;
     color: var(--font-color);
     text-decoration: none;
+    background: rgba(0, 126, 210, 0.2);
 }
 
-.cartitem-decrease {
-    background: rgba(255, 0, 0, 0.25);
-}
-
-.cartitem-increase {
-    background: rgba(0, 255, 0, 0.25);
-}
 
 table tr:nth-child(even) {
     background: rgba(0, 0, 0, 0.03);

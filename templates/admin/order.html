@@ -22,7 +22,7 @@
             <input type="submit" value="تغییر">
         </form>
 
-        <table class="cart"  style="margin-top: 30px">
+        <table class="cart" style="margin-top: 30px">
             <tr>
                 <th>شماره محصول</th>
                 <th>نام محصول</th>
@@ -44,25 +44,42 @@
 
         </table>
 
-    <table class="cart" style="margin-top: 30px">
-        <tr>
-            <th>وضغیت</th>
-            <th>مبلغ</th>
-            <th>شماره پیگیری</th>
-            <th>شماره تراکنش</th>
-            <th>شماره کارت</th>
-        </tr>
-
-        {% for pay in cart.payments %}
+        <table class="cart" style="margin-top: 30px">
             <tr>
-            <td>{{ pay.get_status_persian() }}</td>
-            <td class="price">{{ pay.price }}</td>
-            <td>{{ pay.refid }}</td>
-            <td>{{ pay.transaction_id }}</td>
-            <td>{{ pay.card_pan }}</td>
+                <th>وضغیت</th>
+                <th>مبلغ</th>
+                <th>شماره پیگیری</th>
+                <th>شماره تراکنش</th>
+                <th>شماره کارت</th>
             </tr>
-        {% endfor %}
-    </table>
+
+            {% for pay in cart.payments %}
+                <tr>
+                    <td>{{ pay.get_status_persian() }}</td>
+                    <td class="price">{{ pay.price }}</td>
+                    <td>{{ pay.refid }}</td>
+                    <td>{{ pay.transaction_id }}</td>
+                    <td>{{ pay.card_pan }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+        <table class="cart" style="margin-top: 30px">
+            <tr>
+                <th>نام سفارش دهنده</th>
+                <th>موبایل</th>
+                <th>آدرس</th>
+            </tr>
+
+            <tr>
+                <td>{{ cart.user.username }}</td>
+                <td>{{ cart.user.phone }}</td>
+                <td>{{ cart.user.address }}</td>
+            </tr>
+
+        </table>
+
 
     </section>
 

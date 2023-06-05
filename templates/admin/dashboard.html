@@ -12,12 +12,16 @@
             <tr>
                 <th>شماره سفارش</th>
                 <th>وضعیت</th>
+                <th>نام کاربر</th>
+                <th>موبایل کاربر</th>
                 <th>مشاهده</th>
             </tr>
             {% for cart in carts %}
                 <tr>
                     <td>{{ cart.id }}</td>
                     <td>{{ cart.get_status_persian() }}</td>
+                    <td>{{ cart.user.username }}</td>
+                    <td>{{ cart.user.phone }}</td>
                     <td><a href="{{ url_for('admin.order', id=cart.id ) }}">جزئیات</a></td>
                 </tr>
 
