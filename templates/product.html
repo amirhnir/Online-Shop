@@ -16,15 +16,15 @@
             <h6>شماره محصول: {{ product.id }}</h6>
 
             <span class="tag red big" style="margin-right: 5px;"><img
-                    src="{{ url_for('static',filename="theme-image/delivery.png") }}">ارسال رایگان </span>
+                    src="{{ url_for('static',filename="theme-image/delivery.png") }}">{{ myconfig.feature1 }}</span>
             <span class="tag blue big"><img
-                    src="{{ url_for('static',filename="theme-image/done.png") }}">ضمانت اصالت </span>
+                    src="{{ url_for('static',filename="theme-image/done.png") }}">{{ myconfig.feature2 }}</span>
             <span class="tag yellow big" style="margin-right: 5px;"><img
-                    src="{{ url_for('static',filename="theme-image/wallet.png") }}">پرداخت درب محل</span>
+                    src="{{ url_for('static',filename="theme-image/wallet.png") }}">{{ myconfig.feature3 }}</span>
             <span class="tag green big"><img
-                    src="{{ url_for('static',filename="theme-image/card.png") }}">پرداخت امن با تمام کارت ها</span>
+                    src="{{ url_for('static',filename="theme-image/card.png") }}">{{ myconfig.feature4 }}</span>
  <span class="tag orange big"><img
-                    src="{{ url_for('static',filename="theme-image/7.png") }}">7 روز ضمانت تعویض</span>
+                    src="{{ url_for('static',filename="theme-image/7.png") }}">{{ myconfig.feature5 }}</span>
 
 
             <div class="price-box">

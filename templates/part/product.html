@@ -3,9 +3,9 @@
         <section>
             <img src="{{ url_for('static', filename='cover/'+p.id|string+'.jpg') }}">
             <span class="tag green" style="margin-right: 5px;"><img
-                    src="{{ url_for('static',filename="theme-image/delivery.png") }}">ارسال رایگان </span>
+                    src="{{ url_for('static',filename="theme-image/delivery.png") }}">{{ myconfig.feature1 }}</span>
             <span class="tag blue"><img
-                    src="{{ url_for('static',filename="theme-image/done.png") }}">ضمانت اصالت </span>
+                    src="{{ url_for('static',filename="theme-image/done.png") }}">{{ myconfig.feature2 }}</span>
 
 
             <h3>{{ p.name }}</h3>

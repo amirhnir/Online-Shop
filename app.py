@@ -32,6 +32,11 @@ def unauthorized():
     return redirect(url_for('user.login'))
 
 
+@app.context_processor
+def inject_dict_for_all_templates():
+    return dict(myconfig=config)
+
+
 with app.app_context():
     extentions.db.create_all()
 
